@@ -10,11 +10,11 @@ class ProductPage(BasePage):
         self.solve_quiz_and_get_code()
 
     def should_be_book_name(self):
-        assert self.is_element_present(*ProductPageLocators.BOOK_NAME) \
-               == self.is_element_present(*ProductPageLocators.ALERT_INNER_BOOK_NAME), \
-            "Book name is not excepted in alert"
+        book_name = (self.browser.find_element(*ProductPageLocators.BOOK_NAME)).text
+        book_name_inner = (self.browser.find_element(*ProductPageLocators.ALERT_INNER_BOOK_NAME)).text
+        assert book_name == book_name_inner, "Book name is not excepted in alert"
 
     def should_be_cart_sum(self):
-        assert self.is_element_present(*ProductPageLocators.BOOK_PRICE) \
-               == self.is_element_present(*ProductPageLocators.BASKET_SUM), \
-            "Sum cart != book price"
+        book_price = (self.browser.find_element(*ProductPageLocators.BOOK_PRICE)).text
+        cart_sum = (self.browser.find_element(*ProductPageLocators.BASKET_SUM)).text
+        assert book_price == cart_sum, "Sum cart != book price"

@@ -14,5 +14,5 @@ class ProductPageLocators:
     ADD_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
     ALERT_INNER_BOOK_NAME = (By.CSS_SELECTOR, ".alertinner strong")
     BOOK_NAME = (By.CSS_SELECTOR, ".col-sm-6 h1")
-    BASKET_SUM = (By.CSS_SELECTOR, ".basket-mini strong")
+    BASKET_SUM = (By.CSS_SELECTOR, ".alert-info strong")
     BOOK_PRICE = (By.CSS_SELECTOR, ".col-sm-6 .price_color")
