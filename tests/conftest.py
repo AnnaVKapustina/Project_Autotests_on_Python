@@ -5,9 +5,9 @@ from selenium.webdriver.chrome.options import Options
 
 @pytest.fixture(scope="function")
 def browser(request):
-    #browser_name = request.config.getoption("browser_name")
+    # browser_name = request.config.getoption("browser_name")
     browser_name = 'chrome'
-    #user_language = request.config.getoption("language")
+    # user_language = request.config.getoption("language")
     user_language = 'en'
     if browser_name == "chrome":
         print("\nstart chrome browser for test..")
