@@ -16,3 +16,4 @@ class ProductPageLocators:
     BOOK_NAME = (By.CSS_SELECTOR, ".col-sm-6 h1")
     BASKET_SUM = (By.CSS_SELECTOR, ".alert-info strong")
     BOOK_PRICE = (By.CSS_SELECTOR, ".col-sm-6 .price_color")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert")

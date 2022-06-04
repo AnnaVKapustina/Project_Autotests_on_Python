@@ -7,7 +7,7 @@ class ProductPage(BasePage):
     def add_cart(self):
         cart_button = self.browser.find_element(*ProductPageLocators.ADD_BASKET_BUTTON)
         cart_button.click()
-        self.solve_quiz_and_get_code()
+        # self.solve_quiz_and_get_code()
 
     def should_be_book_name(self):
         book_name = (self.browser.find_element(*ProductPageLocators.BOOK_NAME)).text
@@ -18,3 +18,11 @@ class ProductPage(BasePage):
         book_price = (self.browser.find_element(*ProductPageLocators.BOOK_PRICE)).text
         cart_sum = (self.browser.find_element(*ProductPageLocators.BASKET_SUM)).text
         assert book_price == cart_sum, "Sum cart != book price"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_not_be_message_disappeared_after_adding_product(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
